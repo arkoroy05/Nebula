@@ -21,9 +21,12 @@ export default function Features() {
                       fill="currentColor"
                     />
                   </svg>
-                  <span className="mx-auto block w-fit text-5xl font-semibold">100%</span>
+                  <span className="mx-auto block w-fit text-5xl font-semibold">2.5%</span>
                 </div>
-                <h2 className="mt-6 text-center text-3xl font-semibold">Customizable</h2>
+                <h2 className="mt-6 text-center text-3xl font-semibold">Transparent IP Marketplace</h2>
+                <p className="mt-2 text-center text-foreground text-sm">
+                  2.5% listing fee, royalty splits, and full ownership history — nothing hidden, nothing rigged.
+                </p>
               </CardContent>
             </Card>
             <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2">
@@ -73,10 +76,10 @@ export default function Features() {
                 </div>
                 <div className="relative z-10 mt-6 space-y-2 text-center">
                   <h2 className="group-hover:text-secondary-950 text-lg font-medium transition dark:text-white">
-                    Secure by default
+                    Milestone Verification with Oracles
                   </h2>
                   <p className="text-foreground">
-                    Provident fugit and vero voluptate. magnam magni doloribus dolores voluptates a sapiente nisi.
+                    Chainlink-powered checks ensure funds move only when real progress is made.
                   </p>
                 </div>
               </CardContent>
@@ -147,9 +150,9 @@ export default function Features() {
                   </svg>
                 </div>
                 <div className="relative z-10 mt-14 space-y-2 text-center">
-                  <h2 className="text-lg font-medium transition">Faster than light</h2>
+                  <h2 className="text-lg font-medium transition">Transparent IP Marketplace</h2>
                   <p className="text-foreground">
-                    Provident fugit vero voluptate. magnam magni doloribus dolores voluptates inventore nisi.
+                    2.5% listing fee, royalty splits, and full ownership history — nothing hidden, nothing rigged.
                   </p>
                 </div>
               </CardContent>
@@ -162,10 +165,10 @@ export default function Features() {
                   </div>
                   <div className="space-y-2">
                     <h2 className="group-hover:text-secondary-950 text-lg font-medium text-zinc-800 transition dark:text-white">
-                      Faster than light
+                      Future-Proof Tokenomics
                     </h2>
                     <p className="text-foreground">
-                      Provident fugit vero voluptate. Voluptates a sapiente inventore nisi.
+                      100M fixed supply, long-term vesting for team, locked liquidity — no pump-and-dump games.
                     </p>
                   </div>
                 </div>
@@ -217,9 +220,9 @@ export default function Features() {
                     <Users className="m-auto size-6" strokeWidth={1} />
                   </div>
                   <div className="space-y-2">
-                    <h2 className="text-lg font-medium transition">Keep your loved ones safe</h2>
+                    <h2 className="text-lg font-medium transition">Security First</h2>
                     <p className="text-foreground">
-                      Voluptate. magnam magni doloribus dolores voluptates a sapiente inventore nisi.
+                      Audited contracts, multisig controls, timelock delays, and emergency pause for worst-case scenarios.
                     </p>
                   </div>
                 </div>
@@ -259,6 +262,8 @@ export default function Features() {
                 </div>
               </CardContent>
             </Card>
+            {/* Final callout card text update */}
+            <div className="col-span-full text-center mt-6 hidden"></div>
           </div>
         </div>
       </div>

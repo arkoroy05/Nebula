@@ -6,6 +6,9 @@ import { BentoGrid1 } from "@/components/ui/bento-grid"
 import Features from "@/components/ui/features-new"
 import FooterSection from "@/components/ui/footer"
 import { NavBar } from "@/components/ui/tubelight-navbar"
+import AnimatedGradientBackground from "@/components/ui/background";
+import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
+import { useRef } from "react";
 
 const navItems = [
   { name: "Home", url: "#", icon: Home },
@@ -46,14 +49,11 @@ export default function TuringLanding() {
           {/* Left Content */}
           <div className="max-w-[800px]">
             <h1 className="text-[80px] font-light leading-[1.1] mb-8 tracking-[-2px]">
-              Accelerate your
-              <br />
-              AGI deployment
+              Own Ideas. <br />
+              Fund Research. 
             </h1>
             <p className="text-lg leading-relaxed text-[#b8b8b8] mb-12 font-normal">
-              Trusted by global enterprises, we solve business challenges and
-              <br />
-              boost productivity through intelligent systems.
+              Time to make research funding Transparent. Decentralized. Community-owned.
             </p>
             <div className="flex gap-5 items-center">
               <button className="flex items-center gap-2.5 bg-[#0084ff] text-white py-3.5 px-7 rounded-md text-base font-medium hover:bg-[#0066cc] hover:translate-x-0.5 transition-all duration-200">
@@ -61,7 +61,7 @@ export default function TuringLanding() {
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button className="bg-transparent text-[#b8b8b8] py-3.5 px-7 text-base font-medium hover:text-white transition-colors duration-200">
-                Learn more
+                 Read the whitepaper
               </button>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function TuringLanding() {
           <div className="flex gap-20 items-end">
             <div className="text-center">
               <div className="text-[64px] font-light leading-none mb-3">40+</div>
-              <div className="text-base text-[#b8b8b8] font-normal">Industries innovated</div>
+              <div className="text-base text-[#b8b8b8] font-normal">Ideas innovated</div>
             </div>
             <div className="text-center">
               <div className="text-[64px] font-light leading-none mb-3">3M+</div>
@@ -85,20 +85,24 @@ export default function TuringLanding() {
         <div className="max-w-[1400px] mx-auto px-[60px]">
           <div className="text-center mb-16">
             <h2 className="text-[48px] font-light leading-[1.1] mb-6 tracking-[-1px]">
-              Enterprise-grade AI capabilities
+              Why Nebula Launchpad Exists
             </h2>
             <p className="text-lg text-[#b8b8b8] max-w-2xl mx-auto">
-              From neural processing to global deployment, our platform provides everything you need to build and scale
-              intelligent systems.
+              Your ideas deserve more than dusty patents and gatekept grants
             </p>
           </div>
           <BentoGrid1 />
         </div>
       </section>
-
-      <Features />
-
-      <FooterSection />
+      <section className="relative z-10 py-20 bg-[#0a0a0a]">
+        <Features />
+      </section>
+      <section className="relative z-10 py-20 bg-[#0a0a0a] overflow-hidden">
+        <AnimatedGradientBackground containerClassName="z-0" />
+        <div className="relative z-10">
+          <FooterSection />
+        </div>
+      </section>
     </div>
   )
 }

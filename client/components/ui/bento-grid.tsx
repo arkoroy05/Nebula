@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import { ArrowRight, Brain, Zap, Shield, Globe, BarChart3, Cpu } from "lucide-react"
+import { ArrowRight, FileText, FlaskConical, Coins, ArrowLeftRight, Landmark, Gavel } from "lucide-react"
 import type { ReactNode } from "react"
 
 interface BentoGridItemProps {
@@ -22,10 +22,10 @@ const iconVariants = {
       duration: 2,
       repeat: Number.POSITIVE_INFINITY,
       repeatDelay: 1.5,
-      ease: "easeInOut",
-    },
+      ease: [0.42, 0, 0.58, 1],
+    } as const,
   },
-}
+} as const
 
 const BentoGridItem = ({ title, description, icon, className, size = "small" }: BentoGridItemProps) => {
   const cardVariants = {
@@ -33,9 +33,9 @@ const BentoGridItem = ({ title, description, icon, className, size = "small" }: 
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", damping: 25 },
+      transition: { type: "spring" as const, damping: 25 },
     },
-  }
+  } as const
 
   return (
     <motion.div
@@ -80,39 +80,44 @@ const BentoGridItem = ({ title, description, icon, className, size = "small" }: 
 
 const items = [
   {
-    title: "Neural Processing",
-    description: "Advanced deep learning models with real-time inference and adaptive learning capabilities.",
-    icon: <Brain className="size-6" />,
+    title: "Trade IP as NFTs",
+    description:
+      "Turn patents, inventions, and ideas into digital assets — trade them securely with full history and royalties baked in.",
+    icon: <FileText className="size-6" />,
     size: "large" as const,
   },
   {
-    title: "Lightning Deploy",
-    description: "Instant AGI model deployment with auto-scaling infrastructure in under 30 seconds.",
-    icon: <Zap className="size-6" />,
+    title: "Fund Research, Not Bureaucracy",
+    description:
+      "Back real scientists and creators directly. Funds release only when milestones are verified, so progress is guaranteed.",
+    icon: <FlaskConical className="size-6" />,
     size: "small" as const,
   },
   {
-    title: "Enterprise Security",
-    description: "Military-grade encryption with federated learning and privacy-first architecture.",
-    icon: <Shield className="size-6" />,
+    title: "Earn by Staking NEBL",
+    description: "Lock your tokens, earn up to 20% APR, and get a direct vote in NebulaDAO decisions.",
+    icon: <Coins className="size-6" />,
     size: "medium" as const,
   },
   {
-    title: "Global Edge Network",
-    description: "Distributed AI inference with sub-100ms latency across 180+ regions worldwide.",
-    icon: <Globe className="size-6" />,
+    title: "Swap Instantly",
+    description:
+      "Swap AVAX for NEBL in seconds with real-time Chainlink price feeds — no middlemen, no delays.",
+    icon: <ArrowLeftRight className="size-6" />,
     size: "medium" as const,
   },
   {
-    title: "Analytics Suite",
-    description: "Comprehensive AI performance monitoring and real-time business intelligence.",
-    icon: <BarChart3 className="size-6" />,
+    title: "Govern the Platform",
+    description:
+      "Own NEBL, shape rules. Propose, vote, and execute changes that affect Nebula’s fees, grants, and upgrades.",
+    icon: <Landmark className="size-6" />,
     size: "small" as const,
   },
   {
-    title: "Custom Silicon",
-    description: "Purpose-built AI chips optimized for transformer architectures with 10x performance.",
-    icon: <Cpu className="size-6" />,
+    title: "Resolve Disputes Fairly",
+    description:
+      "Community and experts together handle disputes with transparent, automated resolution flows.",
+    icon: <Gavel className="size-6" />,
     size: "large" as const,
   },
 ]

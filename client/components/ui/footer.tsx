@@ -35,8 +35,13 @@ export default function FooterSection() {
     <footer className="py-16 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
         <Link href="/" aria-label="go home" className="mx-auto block size-fit">
-          <div className="text-xl font-bold tracking-wider">TURING</div>
+          <div className="text-xl font-bold tracking-wider">Nebula Launchpad </div>
         </Link>
+
+        <p className="mt-4 text-center text-sm text-muted-foreground">
+          The decentralized launchpad for IP, research, and community governance. Join us today, and start owning the
+          future of innovation.
+        </p>
 
         <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
           {links.map((link, index) => (
@@ -103,8 +108,7 @@ export default function FooterSection() {
           </Link>
         </div>
         <span className="text-muted-foreground block text-center text-sm">
-          {" "}
-          © {new Date().getFullYear()} Turing AI, All rights reserved
+          © {new Date().getFullYear()} Nebula Launchpad, All rights reserved
         </span>
       </div>
     </footer>
