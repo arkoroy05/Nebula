@@ -13,7 +13,7 @@ import { useRef } from "react";
 const navItems = [
   { name: "Home", url: "#home", icon: Home },
   { name: "Why", url: "#why", icon: FileText },
-  { name: " ", url: "#features", icon: Cpu },
+  { name: "Features", url: "#features", icon: Cpu },
   { name: "About", url: "#about", icon: Users },
 ]
 

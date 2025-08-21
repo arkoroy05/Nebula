@@ -20,7 +20,7 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
   ]
 
   return (
-    <aside className="w-16 bg-black border-r border-white/10 py-6">
+    <aside className="w-16 bg-black border-r border-white/10 py-6 sticky top-0 h-[calc(100vh-0px)]">
       <div className="flex flex-col items-center space-y-6">
         {menuItems.map((item) => (
           <button

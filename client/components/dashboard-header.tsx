@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function DashboardHeader() {
   return (
-    <header className="bg-black border-b border-gray-800 px-6 py-4">
+    <header className="bg-black border-b border-gray-800 px-6 py-4 sticky top-0 z-40">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
