@@ -11,10 +11,9 @@ import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 
 const navItems = [
-  { name: "Home", url: "#", icon: Home },
-  { name: "Platform", url: "#platform", icon: Cpu },
-  { name: "Security", url: "#security", icon: Shield },
-  { name: "Docs", url: "#docs", icon: FileText },
+  { name: "Home", url: "#home", icon: Home },
+  { name: "Why", url: "#why", icon: FileText },
+  { name: " ", url: "#features", icon: Cpu },
   { name: "About", url: "#about", icon: Users },
 ]
 
@@ -30,7 +29,7 @@ export default function TuringLanding() {
       <NavBar items={navItems} />
 
       {/* Main Content */}
-      <main className="main min-h-screen pt-[300px] pb-20 relative">
+      <main id="home" className="main min-h-screen pt-[300px] pb-20 relative">
         {/* Hero Video Background */}
         <video
           className="hero-video absolute -top-[20%] left-0 w-full h-[120%] object-cover z-0 bg-[#111] transform scale-x-[-1]"
@@ -81,7 +80,7 @@ export default function TuringLanding() {
       </main>
 
       {/* Capabilities Section with Bento Grid */}
-      <section className="relative z-10 py-20 bg-[#0a0a0a]">
+      <section id="why" className="relative z-10 py-20 bg-[#0a0a0a]">
         <div className="max-w-[1400px] mx-auto px-[60px]">
           <div className="text-center mb-16">
             <h2 className="text-[48px] font-light leading-[1.1] mb-6 tracking-[-1px]">
@@ -94,10 +93,23 @@ export default function TuringLanding() {
           <BentoGrid1 />
         </div>
       </section>
-      <section className="relative z-10 py-20 bg-[#0a0a0a]">
+      {/* Section intro above features */}
+      <section className="relative z-10 py-12 bg-[#0a0a0a]">
+        <div className="max-w-[1400px] mx-auto px-[60px]">
+          <div className="text-center mb-8">
+            <h2 className="text-[40px] font-light leading-[1.1] mb-4 tracking-[-1px]">
+              What Nebula Unlocks
+            </h2>
+            <p className="text-lg text-[#b8b8b8] max-w-2xl mx-auto">
+              Trade IP, fund research, and govern together — all in one place.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="features" className="relative z-10 py-20 bg-[#0a0a0a]">
         <Features />
       </section>
-      <section className="relative z-10 py-20 bg-[#0a0a0a] overflow-hidden">
+      <section id="about" className="relative z-10 py-20 bg-[#0a0a0a] overflow-hidden">
         <AnimatedGradientBackground containerClassName="z-0" />
         <div className="relative z-10">
           <FooterSection />
