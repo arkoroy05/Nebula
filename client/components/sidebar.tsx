@@ -20,7 +20,7 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
   ]
 
   return (
-    <aside className="w-16 bg-black border-r border-white/10 py-6 sticky top-0 h-[calc(100vh-0px)]">
+    <aside className="w-16 bg-black border-r border-white/10 py-6 sticky top-0 h-[calc(100vh-0px)] z-40">
       <div className="flex flex-col items-center space-y-6">
         {menuItems.map((item) => (
           <button
@@ -34,7 +34,7 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
             title={item.label}
           >
             <item.icon className="w-5 h-5" />
-            <div className="absolute left-full ml-2 px-2 py-1 bg-black/80 backdrop-blur-sm border border-white/10 rounded text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            <div className="absolute left-full ml-2 px-2 py-1 bg-black/80 backdrop-blur-sm border border-white/10 rounded text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 shadow-lg">
               {item.label}
             </div>
           </button>

@@ -109,6 +109,15 @@ export function Stake() {
     return Math.max(0, diffDays)
   }
 
+  const getProgressPercent = (startDate: string, endDate: string) => {
+    const start = new Date(startDate).getTime()
+    const end = new Date(endDate).getTime()
+    const now = Date.now()
+    if (end <= start) return 0
+    const raw = ((now - start) / (end - start)) * 100
+    return Math.max(0, Math.min(100, Math.round(raw)))
+  }
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -336,25 +345,12 @@ export function Stake() {
                 <div className="mb-4">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm text-gray-400">Lock Progress</span>
-                    <span className="text-sm text-white">
-                      {Math.round(
-                        ((new Date().getTime() - new Date(position.startDate).getTime()) /
-                          (new Date(position.endDate).getTime() - new Date(position.startDate).getTime())) *
-                          100,
-                      )}
-                      %
-                    </span>
+                    <span className="text-sm text-white">{getProgressPercent(position.startDate, position.endDate)}%</span>
                   </div>
-                  <div className="w-full bg-gray-800 rounded-full h-2">
+                  <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
                     <div
                       className="bg-blue-600 h-2 rounded-full transition-all duration-300"
-                      style={{
-                        width: `${Math.round(
-                          ((new Date().getTime() - new Date(position.startDate).getTime()) /
-                            (new Date(position.endDate).getTime() - new Date(position.startDate).getTime())) *
-                            100,
-                        )}%`,
-                      }}
+                      style={{ width: `${getProgressPercent(position.startDate, position.endDate)}%` }}
                     ></div>
                   </div>
                 </div>
