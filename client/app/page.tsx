@@ -33,7 +33,7 @@ export default function TuringLanding() {
       <main className="main min-h-screen pt-[300px] pb-20 relative">
         {/* Hero Video Background */}
         <video
-          className="hero-video absolute -top-[20%] left-0 w-full h-[120%] object-cover z-0 bg-[#111]"
+          className="hero-video absolute -top-[20%] left-0 w-full h-[120%] object-cover z-0 bg-[#111] transform scale-x-[-1]"
           autoPlay
           muted
           loop
